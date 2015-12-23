@@ -1,0 +1,40 @@
+#N canvas 210 62 756 756 12;
+#X obj 142 125 c.dsp~ @size 49 49 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @logocolor 0 0.6 0
+0.8;
+#X text 9 11 The dephasing of an oscillator;
+#X obj 379 27 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.5 256;
+#X obj 243 146 cos~;
+#X obj 293 146 cos~;
+#X obj 293 117 +~;
+#X obj 378 97 line~;
+#X obj 379 62 pack f 5000;
+#X obj 436 140 c.number~ @size 53 17 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@interval 50 @decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
+#X msg 452 29 0;
+#X msg 493 31 -0.5;
+#X obj 453 187 osc~ 0.06;
+#X obj 453 212 *~;
+#X obj 243 71 phasor~ 86.2;
+#X obj 352 309 ftr.scope~;
+#X obj 12 196 ftr.scope~;
+#X obj 12 419 ftr.scope~;
+#X connect 2 0 7 0;
+#X connect 3 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 14 0;
+#X connect 4 0 16 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 7 0;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 3 0;
+#X connect 13 0 5 0;

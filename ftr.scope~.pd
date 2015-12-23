@@ -1,0 +1,92 @@
+#N canvas 332 87 1076 712 12;
+#X obj 241 9 inlet~;
+#X obj 62 63 metro 20;
+#X obj 601 201 cnv 15 274 218 empty empty empty 20 12 0 14 -195568
+-66577 0;
+#X obj 242 122 tabwrite~ \$0-gain;
+#X obj 179 664 send \$0-gain;
+#X msg 179 594 resize \$1;
+#X obj 753 231 c.menu @size 91 20 @fontname "DejaVu" @fontweight "normal"
+@fontslant "roman" @fontsize 12 @receive "(null)" @send "(null)" @presetname
+"(null)" @hover 0 @items "256" "512" "1024" "2048" "4096" "8192" @states
+0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.0316186 0.00790465
+0.0316186 1 @textcolor 0 0 0 1;
+#X obj 605 553 s \$0-scale-mode;
+#X obj 851 137 loadbang;
+#X obj 753 544 pow, f 5;
+#X obj 753 519 f 2;
+#X obj 753 494 t b f;
+#X obj 851 162 f 1;
+#X obj 851 231 c.toggle @size 20 20 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@presetname "(null)" @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.0316186 0.00790465
+0.0276663 1 @crcolor 0.0434756 0.011857 0.0395233 1;
+#X text 604 206 Amplitude Scale :;
+#X obj 852 541 s \$0-onoff;
+#X obj 62 14 r \$0-onoff;
+#X msg 28 599 xticks \$1 \$1 1;
+#X obj 456 562 loadbang;
+#N canvas 0 23 450 278 (subpatch) 0;
+#X array \$0-gain 1024 float 2;
+#X coords 0 2 1024 -2 268 140 1 0 0;
+#X restore 604 255 graph;
+#X obj 373 58 block~ 1024 1;
+#X text 752 206 Block Size :;
+#X obj 753 571 s \$0-block-size;
+#X obj 179 505 r \$0-block-size;
+#X msg 373 32 set \$1 1;
+#X obj 373 7 r \$0-block-size;
+#X obj 605 231 c.number @size 72 20 @fontname "DejaVu" @fontweight
+"normal" @fontslant "roman" @fontsize 12 @receive "(null)" @send "(null)"
+@presetname "(null)" @min "(null)" @max "(null)" @minmax "(null)" "(null)"
+@decimal 6 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0 0 0 1 @textcolor 0
+0 0 1;
+#X obj 755 137 loadbang;
+#X obj 753 468 + 8;
+#X obj 305 503 r \$0-scale-mode;
+#X obj 605 137 loadbang;
+#X obj 605 162 f 2;
+#X msg 295 608 bounds 0 \$1 \$2 \$3;
+#X obj 296 578 pack 1 2048 -1;
+#X obj 305 528 t f f;
+#X obj 362 552 * -1;
+#X obj 229 532 t b f;
+#X obj 28 571 * 0.25;
+#X msg 457 595 yticks 0 0.2 5;
+#X obj 755 162 f 2;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 28 0;
+#X connect 8 0 12 0;
+#X connect 9 0 22 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 11 1 9 1;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 16 0 1 0;
+#X connect 17 0 4 0;
+#X connect 18 0 38 0;
+#X connect 23 0 5 0;
+#X connect 23 0 36 0;
+#X connect 23 0 37 0;
+#X connect 24 0 20 0;
+#X connect 25 0 24 0;
+#X connect 26 0 7 0;
+#X connect 27 0 39 0;
+#X connect 28 0 11 0;
+#X connect 29 0 34 0;
+#X connect 30 0 31 0;
+#X connect 31 0 26 0;
+#X connect 32 0 4 0;
+#X connect 33 0 32 0;
+#X connect 34 0 33 0;
+#X connect 34 1 35 0;
+#X connect 35 0 33 2;
+#X connect 36 0 33 0;
+#X connect 36 1 33 1;
+#X connect 37 0 17 0;
+#X connect 38 0 4 0;
+#X connect 39 0 6 0;
+#X coords 0 -1 1 1 276 220 2 600 200;
