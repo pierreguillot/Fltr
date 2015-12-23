@@ -1,6 +1,6 @@
 #N canvas 359 226 747 523 10;
-#X text 5 3 b0 > 0 : -atan((-a1 * sin(ωτ)) / (1 + a1 *cos(ωτ))
-;
 #X text 5 20 b0 < 0 : -atan((-a1 * sin(ωτ)) / (1 + a1 * cos(ωτ))
 + π;
+#X text 5 3 b0 > 0 : -atan((-a1 * sin(ωτ)) / (1 + a1 * cos(ωτ))
+;
 #X coords 0 -1 1 1 346 40 2 0 0;
