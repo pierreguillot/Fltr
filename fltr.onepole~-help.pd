@@ -1,4 +1,4 @@
-#N canvas 40 177 1352 563 10;
+#N canvas 61 23 1340 792 10;
 #X obj 882 42 c.blackboard @size 325 121 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @chalkmode 1 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1;
@@ -15,9 +15,9 @@
 #X obj 401 279 fltr.response.phase \$0 onepole;
 #X obj 401 12 fltr.response.amplitude \$0 onepole 0 10;
 #X obj 82 69 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 0.93 256;
 #X obj 153 69 nbx 5 14 -1 1 0 0 \$0-a1 \$0-a1i a1 0 -8 0 10 -262144
--1 -1 0.95 256;
+-1 -1 1 256;
 #N canvas 0 22 450 300 init 0;
 #X obj 33 97 s \$0-b0i;
 #X msg 33 69 1;
@@ -31,7 +31,9 @@
 #X restore 333 16 pd init;
 #X text 9 11 The One-Pole filter;
 #X obj 21 172 dac~;
-#X obj 12 191 ftr.spectrograme~;
+#X obj 12 279 ftr.spectrogram~;
+#X msg 806 301 \; pd dsp 0;
+#X msg 806 268 \; pd dsp 1;
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
 #X connect 3 0 8 2;
