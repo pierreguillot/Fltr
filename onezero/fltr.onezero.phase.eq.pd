@@ -1,0 +1,3 @@
+#N canvas 359 226 747 523 10;
+#X text 42 11 atan((-b1 * sin(ωτ)) / (b0 + b1 * cos(ωτ));
+#X coords 0 -1 1 1 346 40 2 0 0;

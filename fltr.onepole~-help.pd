@@ -1,23 +1,16 @@
-#N canvas 61 23 1340 792 10;
-#X obj 882 42 c.blackboard @size 325 121 @fontname "Helvetica" @fontweight
-"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@chalkmode 1 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1;
-#X obj 987 79 loadbang;
-#X obj 153 88 pack f 20;
-#X obj 153 113 line~;
-#X obj 82 88 pack f 20;
-#X obj 82 113 line~;
-#X obj 12 36 noise~;
-#X text 923 174 Difference equation : y(n) = b0 * x(n) - a1 * y(n-1)
+#N canvas 627 42 788 617 10;
+#X declare -path onepole;
+#X obj 153 98 pack f 20;
+#X obj 153 123 line~;
+#X obj 82 98 pack f 20;
+#X obj 82 123 line~;
+#X obj 12 46 noise~;
+#X text 33 237 Difference equation : y(n) = b0 * x(n) - a1 * y(n-1)
 ;
-#X obj 12 144 fltr.onepole~, f 24;
-#X msg 938 96 image 2 2 fltr.onepole.gif;
-#X obj 401 279 fltr.response.phase \$0 onepole;
-#X obj 401 12 fltr.response.amplitude \$0 onepole 0 10;
-#X obj 82 69 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
--1 -1 0.93 256;
-#X obj 153 69 nbx 5 14 -1 1 0 0 \$0-a1 \$0-a1i a1 0 -8 0 10 -262144
+#X obj 82 79 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
+#X obj 153 79 nbx 5 14 -1 1 0 0 \$0-a1 \$0-a1i a1 0 -8 0 10 -262144
+-1 -1 0.95 256;
 #N canvas 0 22 450 300 init 0;
 #X obj 33 97 s \$0-b0i;
 #X msg 33 69 1;
@@ -28,21 +21,23 @@
 #X connect 2 0 1 0;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
-#X restore 333 16 pd init;
-#X text 9 11 The One-Pole filter;
-#X obj 21 172 dac~;
-#X obj 12 279 ftr.spectrogram~;
-#X msg 806 301 \; pd dsp 0;
-#X msg 806 268 \; pd dsp 1;
-#X connect 1 0 9 0;
+#X restore 293 23 pd init;
+#X text 9 21 The One-Pole filter;
+#X obj 21 182 dac~;
+#X msg 268 144 \; pd dsp 0;
+#X msg 268 111 \; pd dsp 1;
+#X obj 12 154 fltr.onepole~, f 24;
+#X obj 378 289 fltr.response.phase \$0 onepole;
+#X obj 378 9 fltr.response.amplitude \$0 onepole 0 10;
+#X obj 12 289 fltr.spectrogram~;
+#X obj 153 23 declare -path onepole;
+#X connect 0 0 1 0;
+#X connect 1 0 13 2;
 #X connect 2 0 3 0;
-#X connect 3 0 8 2;
-#X connect 4 0 5 0;
-#X connect 5 0 8 1;
-#X connect 6 0 8 0;
-#X connect 8 0 16 0;
-#X connect 8 0 16 1;
-#X connect 8 0 17 0;
-#X connect 9 0 0 0;
-#X connect 12 0 4 0;
-#X connect 13 0 2 0;
+#X connect 3 0 13 1;
+#X connect 4 0 13 0;
+#X connect 6 0 2 0;
+#X connect 7 0 0 0;
+#X connect 13 0 10 0;
+#X connect 13 0 10 1;
+#X connect 13 0 16 0;
