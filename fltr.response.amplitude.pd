@@ -1,4 +1,4 @@
-#N canvas 284 144 878 526 10;
+#N canvas 517 140 878 526 10;
 #X obj 493 17 loadbang;
 #X msg 493 110 xticks 0 512 2;
 #N canvas 0 22 450 278 (subpatch) 0;

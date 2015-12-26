@@ -1,0 +1,5 @@
+#N canvas 295 227 731 553 10;
+#X obj 100 162 fltr.\$1.difference;
+#X obj 100 122 fltr.\$1.difference.eq;
+#X text 196 103 Difference Equation Y(n);
+#X coords 0 -1 1 1 346 260 2 100 100;

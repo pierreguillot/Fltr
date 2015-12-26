@@ -1,0 +1,17 @@
+#N canvas 697 435 367 217 12;
+#X text 238 74 ↓;
+#X text 172 39 b0;
+#X obj 226 94 ./template/fltr.g.plus;
+#X obj 110 94 ../template/fltr.g.z-1;
+#X text 144 101 ––––⊗–––→;
+#X text 238 63 |;
+#X text 82 95 |;
+#X text 82 84 |;
+#X text 82 73 |;
+#X text 87 55 –––––––––––⊗–––––––
+;
+#X text 82 62 |;
+#X text 172 119 b1;
+#X text 260 101 –→ y(n);
+#X text 22 101 x(n)–––––→;
+#X coords 0 -1 1 1 346 198 2 2 2;

@@ -1,16 +1,14 @@
-#N canvas 28 87 788 617 10;
+#N canvas 32 23 741 778 10;
 #X declare -path onepole;
 #X obj 153 80 pack f 20;
 #X obj 153 105 line~;
 #X obj 82 80 pack f 20;
 #X obj 82 105 line~;
 #X obj 12 80 noise~;
-#X text 33 237 Difference equation : y(n) = b0 * x(n) - a1 * y(n-1)
-;
 #X obj 82 61 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 153 61 nbx 5 14 -1 1 0 0 \$0-a1 \$0-a1i a1 0 -8 0 10 -262144
--1 -1 0.95 256;
+-1 -1 -0.2 256;
 #N canvas 0 22 450 300 init 0;
 #X obj 33 97 s \$0-b0i;
 #X msg 33 69 1;
@@ -25,18 +23,19 @@
 #X text 9 12 The One-Pole filter;
 #X msg 268 104 \; pd dsp 0;
 #X msg 268 71 \; pd dsp 1;
-#X obj 12 136 fltr.onepole~, f 24;
-#X obj 378 289 fltr.response.phase \$0 onepole;
-#X obj 378 9 fltr.response.amplitude \$0 onepole 0 10;
+#X obj 12 134 fltr.onepole~, f 24;
+#X obj 378 499 fltr.response.phase \$0 onepole;
+#X obj 12 499 fltr.response.amplitude \$0 onepole 0 10;
 #X obj 153 11 declare -path onepole;
-#X obj 12 289 fltr.spectrogram~;
+#X obj 12 219 fltr.spectrogram~;
 #X obj 17 158 fltr.output~;
+#X obj 378 219 fltr.difference onepole;
 #X connect 0 0 1 0;
-#X connect 1 0 12 2;
+#X connect 1 0 11 2;
 #X connect 2 0 3 0;
-#X connect 3 0 12 1;
-#X connect 4 0 12 0;
-#X connect 6 0 2 0;
-#X connect 7 0 0 0;
-#X connect 12 0 16 0;
-#X connect 12 0 17 0;
+#X connect 3 0 11 1;
+#X connect 4 0 11 0;
+#X connect 5 0 2 0;
+#X connect 6 0 0 0;
+#X connect 11 0 15 0;
+#X connect 11 0 16 0;

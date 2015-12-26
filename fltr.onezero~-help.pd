@@ -1,14 +1,12 @@
-#N canvas 71 48 813 599 10;
+#N canvas 534 23 846 778 10;
 #X declare -path onezero;
-#X text 9 21 The One-Zero filter;
-#X text 39 192 Difference equation : y(n) = b0 * x(n) + b1 * x(n-1)
-;
-#X obj 147 98 pack f 20;
-#X obj 147 123 line~;
-#X obj 79 98 pack f 20;
-#X obj 79 123 line~;
-#X obj 12 46 noise~;
-#X obj 12 154 fltr.onezero~, f 23;
+#X text 12 13 The One-Zero filter;
+#X obj 147 80 pack f 20;
+#X obj 147 105 line~;
+#X obj 79 80 pack f 20;
+#X obj 79 105 line~;
+#X obj 12 80 noise~;
+#X obj 12 134 fltr.onezero~, f 23;
 #N canvas 0 22 450 300 init 0;
 #X obj 33 97 s \$0-b0i;
 #X msg 33 69 1;
@@ -19,22 +17,25 @@
 #X connect 2 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X restore 290 26 pd init;
-#X obj 150 26 declare -path onezero;
-#X obj 79 79 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
+#X restore 290 12 pd init;
+#X obj 150 12 declare -path onezero;
+#X obj 79 61 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
-#X obj 147 79 nbx 5 14 -1 1 0 0 \$0-b1 \$0-b1i b1 0 -8 0 10 -262144
--1 -1 0.06 256;
-#X obj 378 9 fltr.response.amplitude \$0 onezero 0 2;
-#X obj 378 289 fltr.response.phase \$0 onezero;
+#X obj 147 61 nbx 5 14 -1 1 0 0 \$0-b1 \$0-b1i b1 0 -8 0 10 -262144
+-1 -1 -0.36 256;
+#X obj 12 499 fltr.response.amplitude \$0 onezero 0 2;
+#X obj 378 499 fltr.response.phase \$0 onezero;
 #X msg 278 144 \; pd dsp 0;
 #X msg 278 111 \; pd dsp 1;
-#X obj 12 289 fltr.spectrogram~;
-#X connect 2 0 3 0;
-#X connect 3 0 7 2;
-#X connect 4 0 5 0;
-#X connect 5 0 7 1;
-#X connect 6 0 7 0;
-#X connect 7 0 16 0;
-#X connect 10 0 4 0;
-#X connect 11 0 2 0;
+#X obj 17 158 fltr.output~;
+#X obj 378 219 fltr.difference onezero;
+#X obj 12 219 fltr.spectrogram~;
+#X connect 1 0 2 0;
+#X connect 2 0 6 2;
+#X connect 3 0 4 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 0 17 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
