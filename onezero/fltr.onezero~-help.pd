@@ -1,5 +1,6 @@
 #N canvas 534 23 846 778 10;
-#X declare -path onezero;
+#X declare -path ../;
+#X declare -path ../onezero;
 #X text 12 13 The One-Zero filter;
 #X obj 147 80 pack f 20;
 #X obj 147 105 line~;
@@ -18,11 +19,10 @@
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 290 12 pd init;
-#X obj 150 12 declare -path onezero;
 #X obj 79 61 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 147 61 nbx 5 14 -1 1 0 0 \$0-b1 \$0-b1i b1 0 -8 0 10 -262144
--1 -1 -0.36 256;
+-1 -1 0.95 256;
 #X obj 12 499 fltr.response.amplitude \$0 onezero 0 2;
 #X obj 378 499 fltr.response.phase \$0 onezero;
 #X msg 278 144 \; pd dsp 0;
@@ -30,12 +30,14 @@
 #X obj 17 158 fltr.output~;
 #X obj 378 219 fltr.difference onezero;
 #X obj 12 219 fltr.spectrogram~;
+#X obj 356 12 declare -path ../;
+#X obj 356 32 declare -path ../onezero;
 #X connect 1 0 2 0;
 #X connect 2 0 6 2;
 #X connect 3 0 4 0;
 #X connect 4 0 6 1;
 #X connect 5 0 6 0;
-#X connect 6 0 15 0;
-#X connect 6 0 17 0;
-#X connect 9 0 3 0;
-#X connect 10 0 1 0;
+#X connect 6 0 14 0;
+#X connect 6 0 16 0;
+#X connect 8 0 3 0;
+#X connect 9 0 1 0;

@@ -1,0 +1,5 @@
+#N canvas 359 226 747 523 10;
+#X text 301 497 Difference equation : y(n) = b0 * x(n) + b1 * x(n-1)
++ b2 * x(n-2), f 66;
+#X text 67 13 b0 * x(n) + b1 * x(n-1) + b2 * x(n-2);
+#X coords 0 -1 1 1 346 40 2 0 0;
