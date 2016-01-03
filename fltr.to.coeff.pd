@@ -1,0 +1,45 @@
+#N canvas 138 232 551 417 12;
+#X obj 115 163 cos;
+#X obj 152 188 t b f;
+#X obj 115 288 outlet;
+#X obj 115 263 / 1, f 7;
+#X obj 115 238 * 0, f 5;
+#X obj 168 238 r \$1-b0;
+#X obj 255 163 t f f;
+#X obj 255 188 *, f 5;
+#X obj 255 213 / 1, f 7;
+#X obj 308 188 r \$1-b0;
+#X obj 261 57 nbx 5 14 0 1 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.9 256;
+#X obj 261 89 nbx 5 14 0 3.14159 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 128 57 hsl 128 15 0 1 0 0 empty \$1-ri R -2 -8 0 10 -262144
+-1 -1 11430 1;
+#X obj 128 89 hsl 128 15 0 3.14159 0 0 empty \$1-θi Θ -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 255 288 outlet;
+#X obj 152 163 * -2;
+#X msg 261 108 set \$1;
+#X msg 261 28 set \$1;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 1 1 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 8 1;
+#X connect 10 0 17 0;
+#X connect 10 0 6 0;
+#X connect 10 0 15 0;
+#X connect 11 0 16 0;
+#X connect 11 0 0 0;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 15 0 1 0;
+#X connect 16 0 13 0;
+#X connect 17 0 12 0;
+#X coords 0 -1 1 1 200 70 2 120 40;

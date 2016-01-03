@@ -11,21 +11,21 @@
 #X obj 33 97 s \$0-b0i;
 #X msg 33 69 1;
 #X obj 32 37 loadbang;
-#X msg 103 70 0.95;
-#X obj 105 96 s \$0-b1i;
-#X msg 163 70 0.95;
-#X obj 165 96 s \$0-b2i;
+#X obj 105 96 s \$0-ri;
+#X msg 103 70 0.9;
+#X obj 165 96 s \$0-θi;
+#X msg 163 70 1.59;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
-#X connect 2 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 5 0 6 0;
+#X connect 2 0 4 0;
+#X connect 2 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
 #X restore 290 12 pd init;
 #X obj 79 61 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 146 61 nbx 5 14 -1e+08 1e+08 0 0 \$0-b1 \$0-b1i b1 0 -8 0 10
--262144 -1 -1 1.21915 256;
+-262144 -1 -1 -1.02533 256;
 #X obj 12 499 fltr.response.amplitude \$0 twozero 0 4;
 #X msg 278 144 \; pd dsp 0;
 #X msg 278 111 \; pd dsp 1;
@@ -39,23 +39,10 @@
 #X obj 213 80 pack f 20;
 #X obj 213 105 line~;
 #X obj 213 61 nbx 5 14 -999999 999999 0 0 \$0-b2 \$0-b2i b2 0 -8 0
-10 -262144 -1 -1 1 256;
-#X obj 386 81 nbx 5 14 0 1 0 0 empty \$0-r R 0 -8 0 10 -262144 -1 -1
-1 256;
-#X obj 460 81 nbx 5 14 0 3.14159 0 0 empty \$0-θ Θ 0 -8 0 10 -262144
--1 -1 2.22632 256;
-#X obj 386 100 t f f;
-#X obj 386 122 *, f 5;
-#X obj 386 144 s \$0-b2i;
-#X obj 460 100 cos;
-#X obj 460 162 *;
-#X obj 460 122 t b f;
-#X obj 460 186 s \$0-b1i;
-#X obj 487 144 * -2;
-#X obj 549 55 hsl 128 15 0 1 0 0 \$0-r \$0-ri R -2 -8 0 10 -262144
--1 -1 12700 1;
-#X obj 549 85 hsl 128 15 0 3.14159 0 0 \$0-θ \$0-θi Θ -2 -8 0 10
--262144 -1 -1 9000 1;
+10 -262144 -1 -1 0.81 256;
+#X obj 376 56 fltr.to.coeff \$0, f 17;
+#X obj 376 131 s \$0-b1i;
+#X obj 569 131 s \$0-b2i;
 #X connect 1 0 2 0;
 #X connect 2 0 15 2;
 #X connect 3 0 4 0;
@@ -68,14 +55,5 @@
 #X connect 19 0 20 0;
 #X connect 20 0 15 3;
 #X connect 21 0 19 0;
-#X connect 22 0 24 0;
-#X connect 22 0 29 0;
-#X connect 23 0 27 0;
-#X connect 24 0 25 0;
-#X connect 24 1 25 1;
-#X connect 25 0 26 0;
-#X connect 27 0 28 0;
-#X connect 28 0 30 0;
-#X connect 29 0 28 0;
-#X connect 29 1 31 0;
-#X connect 31 0 28 1;
+#X connect 22 0 23 0;
+#X connect 22 1 24 0;

@@ -24,6 +24,7 @@
 #X text 337 320 |sin(θ)|;
 #X text 49 9 Here a small trick completely useless to use b1 and b2
 \, instead of directely cos(θ) and sin(θ) and r;
+#X text 279 371 Because we must use complex pole filters, f 21;
 #X connect 0 0 3 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 1;
