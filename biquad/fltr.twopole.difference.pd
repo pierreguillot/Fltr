@@ -1,5 +1,9 @@
 #N canvas 283 339 460 215 12;
+#X obj 120 6 ./template/fltr.g.plus;
+#X obj 236 50 ../template/fltr.g.z-1;
+#X obj 119 89 ./template/fltr.g.plus;
 #X text 73 32 b0;
+#X obj 241 134 ../template/fltr.g.z-1;
 #X text 246 32 ↓;
 #X text 246 21 |;
 #X text 246 116 ↓;
@@ -25,8 +29,4 @@ y(n);
 #X text 178 165 -a2;
 #X text 152 98 ←–––⊗––––––;
 #X text 136 182 ––––––⊗–––––––;
-#X obj 120 6 ./misc/fltr.g.plus;
-#X obj 119 89 ./misc/fltr.g.plus;
-#X obj 241 134 ../misc/fltr.g.z-1;
-#X obj 236 50 ../misc/fltr.g.z-1;
 #X coords 0 -1 1 1 346 198 2 2 2;

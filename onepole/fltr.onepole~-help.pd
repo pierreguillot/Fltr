@@ -1,5 +1,5 @@
 #N canvas 401 27 741 778 10;
-#X declare -path ../ -path ../onepole;
+#X declare -path ../misc -path ../onepole;
 #X obj 153 80 pack f 20;
 #X obj 153 105 line~;
 #X obj 82 80 pack f 20;
@@ -29,7 +29,7 @@
 #X obj 12 219 fltr.spectrogram~;
 #X obj 17 158 fltr.output~;
 #X obj 378 219 fltr.difference onepole;
-#X obj 515 4 declare -path ../ -path ../onepole;
+#X obj 455 4 declare -path ../misc -path ../onepole;
 #X connect 0 0 1 0;
 #X connect 1 0 11 2;
 #X connect 2 0 3 0;

@@ -1,6 +1,5 @@
 #N canvas 534 23 846 778 10;
-#X declare -path ../;
-#X declare -path ../onezero;
+#X declare -path ../misc -path ../onezero;
 #X text 12 13 The One-Zero filter;
 #X obj 147 80 pack f 20;
 #X obj 147 105 line~;
@@ -30,8 +29,7 @@
 #X obj 17 158 fltr.output~;
 #X obj 378 219 fltr.difference onezero;
 #X obj 12 219 fltr.spectrogram~;
-#X obj 356 12 declare -path ../;
-#X obj 356 32 declare -path ../onezero;
+#X obj 356 12 declare -path ../misc -path ../onezero;
 #X connect 1 0 2 0;
 #X connect 2 0 6 2;
 #X connect 3 0 4 0;

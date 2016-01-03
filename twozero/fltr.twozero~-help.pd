@@ -1,6 +1,5 @@
 #N canvas 534 23 846 778 10;
-#X declare -path ../;
-#X declare -path ../twozero;
+#X declare -path ../misc -path ../twozero;
 #X text 12 13 The Two-Zero filter;
 #X obj 146 80 pack f 20;
 #X obj 146 105 line~;
@@ -25,35 +24,34 @@
 #X obj 79 61 nbx 5 14 0 1e+37 0 0 \$0-b0 \$0-b0i b0 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 146 61 nbx 5 14 -1e+08 1e+08 0 0 \$0-b1 \$0-b1i b1 0 -8 0 10
--262144 -1 -1 -1.02533 256;
+-262144 -1 -1 0 256;
 #X obj 12 499 fltr.response.amplitude \$0 twozero 0 4;
 #X msg 278 144 \; pd dsp 0;
 #X msg 278 111 \; pd dsp 1;
 #X obj 17 158 fltr.output~;
 #X obj 12 219 fltr.spectrogram~;
-#X obj 356 12 declare -path ../;
 #X obj 12 134 fltr.twozero~, f 34;
-#X obj 356 32 declare -path ../twozero;
 #X obj 378 219 fltr.difference twozero;
 #X obj 378 499 fltr.response.phase \$0 twozero;
 #X obj 213 80 pack f 20;
 #X obj 213 105 line~;
 #X obj 213 61 nbx 5 14 -999999 999999 0 0 \$0-b2 \$0-b2i b2 0 -8 0
-10 -262144 -1 -1 0.81 256;
+10 -262144 -1 -1 0 256;
 #X obj 376 56 fltr.to.coeff \$0, f 17;
 #X obj 376 131 s \$0-b1i;
 #X obj 569 131 s \$0-b2i;
+#X obj 356 12 declare -path ../misc -path ../twozero;
 #X connect 1 0 2 0;
-#X connect 2 0 15 2;
+#X connect 2 0 14 2;
 #X connect 3 0 4 0;
-#X connect 4 0 15 1;
-#X connect 5 0 15 0;
+#X connect 4 0 14 1;
+#X connect 5 0 14 0;
 #X connect 7 0 3 0;
 #X connect 8 0 1 0;
-#X connect 15 0 12 0;
-#X connect 15 0 13 0;
-#X connect 19 0 20 0;
-#X connect 20 0 15 3;
-#X connect 21 0 19 0;
-#X connect 22 0 23 0;
-#X connect 22 1 24 0;
+#X connect 14 0 12 0;
+#X connect 14 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 3;
+#X connect 19 0 17 0;
+#X connect 20 0 21 0;
+#X connect 20 1 22 0;
